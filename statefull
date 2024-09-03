@@ -1,0 +1,6 @@
+Stateless Applications: Each request is independent, and state (if any) is managed externally (e.g., in a database or distributed cache). Autoscaling is straightforward because each instance operates independently.
+Stateful Applications: These maintain some state information between requests (e.g., user sessions stored in memory). Scaling these applications can be challenging because the state is not automatically shared across instances.
+Challenges with Stateful Applications:
+
+When Azure Web App scales out (adds more instances), new instances do not share the in-memory state of existing instances.
+A user’s session might be tied to a specific instance, causing issues if a subsequent request is handled by a different instance.
